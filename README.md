@@ -11,10 +11,35 @@ file 6 :  Dockerfile.mariadb
 file 7 :  docker-compose.yml
 file 8 :  index.html
 
+commands sequence
 
-Create three directories/folders
-Folder 1: mariadb ------> 
-nodejs
-frontend
+1: Install kubernetes cluster aws/gcp/minikube etc
+
+2: install docker
+
+3: install the rwquired package:
+    npm init -y
+    npm install express mariadb
+4 : run the Dockerfiles one by one in respective folders to create the images
+
+5:  use the following commands for deployment
+      kubectl apply -f mariadb-deployment.yaml   (mariadb folder)
+      kubectl apply -f nodejs-api-deployment.yaml (nodejs folder)
+       kubectl apply -f nodejs-api-service.yml  (nodejs folder)
+6: Access MariaDB Pod with Port Forwarding
+      kubectl port-forward <pod-name> 3306:3306
+      kubectl exec -it <pod-name> -- /bin/bash  (locally)
+7: to access the api
+    npm install
+    node server.js
+8:  expose the respective all ports which mentioned in files 3306,3000,80 etc
+
+9: Access the API:
+    http://<your-ec2-public-ip>:3000/user
+10: you can also user ther below command to access locally
+    http-server
+
+       
+
 
 
