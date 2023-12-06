@@ -12,3 +12,9 @@ file 7 :  docker-compose.yml
 file 8 :  index.html
 
 
+Create three directories/folders
+Folder 1: mariadb ------> 
+nodejs
+frontend
+
+
