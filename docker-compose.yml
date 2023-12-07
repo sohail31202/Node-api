@@ -3,7 +3,7 @@ version: '3'
 services:
   mariadb:
     build:
-      context: .
+      context: ./mariadb
       dockerfile: Dockerfile.mariadb
     ports:
       - "3306:3306"
@@ -15,7 +15,7 @@ services:
 
   nodejs-api:
     build:
-      context: .
+      context: ./nodejs
       dockerfile: Dockerfile.nodejs
     ports:
       - "3000:3000"
